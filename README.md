@@ -19,3 +19,8 @@ Command: </br>
 
 # Usage
 - [p]bns ign
+
+# Note 
+All my code is being done in Debian Linux environment. </br>
+I cannot guarantee that it will work on Windows/Mac OS. </br>
+Nevertheless, it should work without any problem with the neccessary requirements installed. </br>
