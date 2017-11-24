@@ -14,7 +14,7 @@ Get it here @ http://lxml.de/installation.html
 
 # To install the cogs
 Command: </br>
-[p]cog repo add nanacogs https://github.com/akuafif/nanacogs </br>
+[p]cog repo add nanacogs https://github.com/rarakat/nanacogs </br>
 [p]cog install nanacogs bns </br>
 
 # Usage
