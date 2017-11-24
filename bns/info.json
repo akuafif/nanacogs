@@ -1,9 +1,10 @@
 {
     "AUTHOR" : "rarakat",
+    "INSTALL_MSG" : "Thank you for installing BNS cog. [P]bns charactername to start stalking.",
+    "NAME" : "BNS",
     "SHORT" : "BNS-TW F2 Character Search",
     "DESCRIPTION" : "Can search for any character profile in Blade and Soul TW.",
-    "DISABLED" : false,
-    "NAME" : "bns",
     "TAGS" : ["game"],
-    "INSTALL_MSG" : "Thank you for installing BNS cog."
+    "REQUIREMENTS" : ["lxml"],
+    "HIDDEN" : false
 }
