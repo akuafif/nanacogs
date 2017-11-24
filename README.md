@@ -8,7 +8,7 @@ A Cog for **Blade and Soul Taiwan** F2 Character Search for Red Discord Bot
 You must have Red Discord Bot in order to use this. </br>
 You can read more @ https://twentysix26.github.io/Red-Docs/
 
-###LXML
+### LXML
 This code uses lxml to parse.
 Get it here @ http://lxml.de/installation.html
 
