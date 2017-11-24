@@ -3,5 +3,5 @@
     "INSTALL_MSG" : "Thank you for installing. ",
     "NAME" : "nanacogs",
     "SHORT" : "Blade and Soul Taiwan Cogs",
-    "DESCRIPTION" : "All my code is being done in Linux environment.\nI cannot guarantee that it will work on Windows/Mac OS.\nPlease do README.md and install the requirements first.\n\nThank you for installing."
+    "DESCRIPTION" : "All my code is being done in Linux environment.\nI cannot guarantee that it will work on Windows/Mac OS.\nPlease do https://github.com/rarakat/nanacogs/blob/master/README.md and install the requirements first.\n\nThank you for installing."
 }
