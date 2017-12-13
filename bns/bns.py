@@ -73,9 +73,8 @@ class BNS:
                         await send_cmd_help(ctx)
                         return
 
-		# Need to convert space to URL encoding character
+		# Getting the result from bns api
 		msgOut = await self.bot.say('*Fetching...*')
-
 		page = await get('http://g.bns.tw.ncsoft.com/ingame/bs/character/profile?c=' + name)
 		content = await page.read()
 		content = fromstring(str(content).encode('UTF-8'))
