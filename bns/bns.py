@@ -18,6 +18,7 @@ except ImportError:
     from urllib2 import urlopen
 
 class BNS:
+	"""BNS custom commands!"""
 	def __init__(self, bot):
 		self.bot = bot
 		
@@ -29,10 +30,10 @@ class BNS:
 	@commands.command(pass_context=True)
 	async def bns(self, ctx, *text):
 		""" Search a character from Blade And Soul Taiwan
-		Usage :	rin bns charactername
+		Usage :	[p]bns charactername
 		"""
 
-		# Class Vars in ascii. Why? Cause im noob, doesnot know how to deal with utf-8 unicode
+		# Class ingame. Tried to get chinese char to work but cant.
 		blademaster = '\\xe5\\x8a\\x8d\\xe5\\xa3\\xab'
 		assassin = '\\xe5\\x88\\xba\\xe5\\xae\\xa2'
 		kungfumaster = '\\xe6\\x8b\\xb3\\xe5\\xa3\\xab'
@@ -159,14 +160,24 @@ class BNS:
 		# Output Embed for stage 2
 		# Getting the stats. Server might be too potato. So have to Retry if fail
 		# URL : http://g.bns.tw.ncsoft.com/ingame/bs/character/data/abilities.json?c= + name.encode('utf-8')
-		while(1):
+		for x in range(0,3):
 			url = 'http://g.bns.tw.ncsoft.com/ingame/bs/character/data/abilities.json?c=' + quote(name)
 			r = urllib.request.urlopen(url)
 			data = json.loads(r.read().decode(r.info().get_param('charset') or 'utf-8'))
 
-			#break if its not fail
+			#break if its not fail afer a few tries.
+			#server will return:
+			#More than 1 keys - Stats values
+			#Exactly 1 key - Fail or not found error (obviously wrong cause it must exist when reach this code)
 			if len(data.keys()) != 1:
 				break
+
+			#After a few tries of not getting data, just give up la sial.
+			if x == 2:
+				embed.add_field(name='__Server Error__', value='Unable to retrieve stats from server')
+				msgOut = await self.bot.edit_message(msgOut, embed=embed)
+				return
+			x += 1
 
 		# JSON data for stats and Points distribution
 		stats = data['records']['total_ability']
