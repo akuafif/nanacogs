@@ -11,11 +11,13 @@ Command: </br>
 ## gtaostatus
 A Cog for **Rockstar Grand Theft Auto Online PC** service status
 - [p] gtaostatus
+
 ![demo](https://cdn.discordapp.com/attachments/334877847124443136/1063806947368898580/image.png)
 
 ## BNS
 A Cog for **Blade and Soul Taiwan** F2 Character Search for Red Discord Bot
 - [p] bns ign
+
 ![demo](https://cdn.discordapp.com/attachments/334877847124443136/383480427882479616/image.png)
 ### Requirements 
 #### RED
