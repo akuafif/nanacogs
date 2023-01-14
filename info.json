@@ -1,7 +1,8 @@
 {
-    "AUTHOR" : "rarakat",
-    "INSTALL_MSG" : "Thank you for installing. ",
-    "NAME" : "nanacogs",
-    "SHORT" : "Blade and Soul Taiwan Cogs",
-    "DESCRIPTION" : "All my code is being done in Linux environment.\nI cannot guarantee that it will work on Windows/Mac OS.\nPlease do https://github.com/rarakat/nanacogs/blob/master/README.md and install the requirements first.\n\nThank you for installing."
+    "author" : ["akuafif"],
+    "install_msg" : "Thank you for installing.",
+    "name" : "nanacogs",
+    "short" : "Online PC Gaming Related Cogs",
+    "description" : "All my code is being done in Linux environment.\nI cannot guarantee that it will work on Windows/Mac OS.\nPlease install the requirements first.\n\nThank you for installing.",
+    "tags" : ["gaming","game"]
 }
