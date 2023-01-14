@@ -12,7 +12,11 @@ Command: </br>
 A Cog for **Rockstar Grand Theft Auto Online PC** service status
 - [p] gtaostatus
 
-![demo](https://cdn.discordapp.com/attachments/334877847124443136/1063806947368898580/image.png)
+![Status](https://cdn.discordapp.com/attachments/334877847124443136/1063806947368898580/image.png)
+
+- [p] gtaonews
+
+![News](https://cdn.discordapp.com/attachments/489078888648015892/1063910200303693864/image.png)
 
 ## BNS
 A Cog for **Blade and Soul Taiwan** F2 Character Search for Red Discord Bot
@@ -25,5 +29,5 @@ You must have Red Discord Bot. </br>
 You can read more @ https://twentysix26.github.io/Red-Docs/
 
 #### LXML
-This code uses lxml to parse.
+The bns.py code uses lxml to parse.
 Get it here @ http://lxml.de/installation.html

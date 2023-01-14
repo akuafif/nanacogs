@@ -1,7 +1,7 @@
 {
     "AUTHOR" : "akuafif",
-    "INSTALL_MSG" : "Thank you for installing. ",
+    "INSTALL_MSG" : "Thank you for installing",
     "NAME" : "gtaostatus",
-    "SHORT" : "Grand Theft Auto Online PC Service Status",
-    "DESCRIPTION" : "Command: <prefix> gtaostatus"
+    "SHORT" : "Grand Theft Auto Online PC Service Status and News",
+    "DESCRIPTION" : "Command: <prefix> [gtaostatus/gtaonews]"
 }
