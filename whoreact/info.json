@@ -1,0 +1,7 @@
+{
+    "AUTHOR" : "akuafif",
+    "INSTALL_MSG" : "Thank you for installing. ",
+    "NAME" : "WhoReact",
+    "SHORT" : "Get the unique names of users reacted to a message",
+    "DESCRIPTION" : "Command: <prefix> whoreact [message_id]"
+}
