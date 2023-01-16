@@ -18,7 +18,7 @@ A Cog for **Blade and Soul Taiwan** F2 Character Search for Red Discord Bot
 The bns.py code uses lxml to parse.
 Get it here @ http://lxml.de/installation.html
 
-## gtaostatus
+## GTAOStatus
 A Cog for **Rockstar Grand Theft Auto Online PC** service status
 - [p] gtaostatus
 
