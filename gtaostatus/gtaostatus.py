@@ -42,7 +42,7 @@ class GTAOStatus(commands.Cog):
         
         # Creating the Embed
         embed = discord.Embed(colour=0xe241f4)
-        embed.set_author(name=f"Requested by: {ctx.author.display_name}", url=url, icon_url=ctx.author.avatar_url)
+        embed.set_author(name=f"Requested by: {ctx.author.display_name}", url=url) #icon_url=ctx.author.avatar_url)
         embed.title = f"Rockstar Services Status - {parsed_json['updated']}"
         embed.set_footer(text=f"coded by rarakat")
         #embed.set_thumbnail(url="https://i.imgur.com/axLm3p6.jpeg")
