@@ -1,4 +1,5 @@
 from .gtaostatus import GTAOStatus
 
-def setup(bot):
-    bot.add_cog(GTAOStatus(bot))
+async def setup(bot):
+    cog = GTAOStatus(bot)
+    await bot.add_cog(cog)
