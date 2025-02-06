@@ -1,0 +1,7 @@
+{
+    "AUTHOR" : "akuafif",
+    "INSTALL_MSG" : "Thank you for installing",
+    "NAME" : "marvelrivals",
+    "SHORT" : "Get Marvel Rival Player info from https://rivalsmeta.com",
+    "DESCRIPTION" : "Command: <prefix> mrplayer playername"
+}

@@ -8,30 +8,36 @@ Command: </br>
 [p]cog repo add nanacogs https://github.com/akuafif/nanacogs </br>
 [p]cog install nanacogs gtaostatus </br>
 
-## BNS
+## Marvel Rivals
+A Cog for **Marvel Rivals** Player Search for Red Discord Bot
+- [p] mrplayer playername
+
+![demo](https://i.imgur.com/EZyCW0A.png)
+
+## WhoReact
+- [p] bns whoreact [message_id]
+
+![demo](https://i.imgur.com/5kBE7zh.png)
+
+## BNS (No longer playing)
 A Cog for **Blade and Soul Taiwan** F2 Character Search for Red Discord Bot
 - [p] bns ign
 
-![demo](https://cdn.discordapp.com/attachments/334877847124443136/383480427882479616/image.png)
+![demo](https://i.imgur.com/GRprmdb.png)
 
 #### LXML
 The bns.py code uses lxml to parse.
 Get it here @ http://lxml.de/installation.html
 
-## GTAOStatus
+## GTAOStatus (No longer playing)
 A Cog for **Rockstar Grand Theft Auto Online PC** service status
 - [p] gtaostatus
 
-![Status](https://cdn.discordapp.com/attachments/334877847124443136/1063806947368898580/image.png)
+![image](https://i.imgur.com/1nzLp80.png)
 
 - [p] gtaonews
 
-![News](https://cdn.discordapp.com/attachments/489078888648015892/1063910200303693864/image.png)
-
-## WhoReact
-- [p] bns whoreact [message_id]
-
-![demo](https://cdn.discordapp.com/attachments/489078888648015892/1064563968208818258/image.png)
+![Imgur](https://i.imgur.com/gAOPjRf.png)
 
 ### Requirements 
 #### RED
