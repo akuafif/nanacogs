@@ -12,7 +12,7 @@ Command: </br>
 A Cog for **Marvel Rivals** Player Search for Red Discord Bot
 - [p] mrplayer playername
 
-![demo](https://i.imgur.com/EZyCW0A.png)
+![demo](https://i.imgur.com/1sQ2FyG.png)
 
 ## WhoReact
 - [p] bns whoreact [message_id]

@@ -57,31 +57,47 @@ class MarvelRivals(commands.Cog):
             html = urlopen(req).read()
             json_data = json.loads(html)
             
-            last_updated = datetime.utcfromtimestamp(json_data["player"]["info_update_time"]).strftime('%Y-%m-%d %H:%M:%S')
-            
-            rank_details = ''
-            i = 0
-            for key in json_data["player"]["info"]["rank_game_season"]:
-                value = json_data["player"]["info"]["rank_game_season"][key]
-                tempjson = json.loads(value)
-                rank_details += f'Season {i} Rank : {self.get_rank(tempjson["level"])}\n'
-                i += 1
-                        
             # Creating Header Embed
+            last_updated = datetime.utcfromtimestamp(json_data["player"]["info_update_time"]).strftime('%Y-%m-%d %H:%M:%S')
             embed = discord.Embed(colour=0xe241f4)
             embed.set_author(name=f"Marvel Rival Player Info (Profile Last Updated: {last_updated})", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
             embed.set_footer(text=f"Coded by rarakat")
             
-            # Adding Embed
+            # Rank
+            rank_details = ''
+            i = len(json_data["player"]["info"]["rank_game_season"])
+            for key in json_data["player"]["info"]["rank_game_season"]:
+                i -= 1
+                value = json_data["player"]["info"]["rank_game_season"][key]
+                tempjson = json.loads(value)
+                rank_details += f'Season {i}: {self.get_rank(tempjson["level"])}\n'
             embed.add_field(name="Profile",
                                 value=f'Name (id): {json_data["player"]["info"]["name"]} ({json_data["player"]["info"]["aid"]}) \nLevel: {json_data["player"]["info"]["level"]}',
                                 inline=False)
             embed.add_field(name='Rank', value=f'**{rank_details}**')
-            embed.add_field(name='Matches Overall', value=f'Total win matches: {json_data["stats"]["total_wins"]} / {json_data["stats"]["total_matches"]}')
+            
+            # Overall
+            if json_data["stats"]["total_wins"] != 0 and json_data["stats"]["total_matches"] != 0:
+                overall_win_rate = round((json_data["stats"]["total_wins"] / json_data["stats"]["total_matches"]) * 100,2)
+            else:
+                overall_win_rate = 0
+            embed.add_field(name='Matches Overall', value=f'Total Win matches: {json_data["stats"]["total_wins"]} / {json_data["stats"]["total_matches"]}\nWin Rate: {overall_win_rate} %')
+            
+            # Unranked
+            if json_data["stats"]["unranked_matches_wins"] != 0 and json_data["stats"]["unranked_matches"] != 0:
+                unrank_win_rate = round((json_data["stats"]["unranked_matches_wins"] / json_data["stats"]["unranked_matches"]) * 100,2)
+            else:
+                unrank_win_rate = 0
             embed.add_field(name='Unranked Matches Overall', 
-                            value=f'Win / Total: {json_data["stats"]["total_wins"]} / {json_data["stats"]["total_matches"]}\nK/D/A: {json_data["stats"]["unranked"]["total_kills"]} / {json_data["stats"]["unranked"]["total_deaths"]} / {json_data["stats"]["unranked"]["total_assists"]}\nTime Played: {self.convert_to_preferred_format(json_data["stats"]["unranked"]["total_time_played"])}')
+                            value=f'Win / Total: {json_data["stats"]["unranked_matches_wins"]} / {json_data["stats"]["unranked_matches"]}\nWin Rate: {unrank_win_rate} %\nK/D/A: {json_data["stats"]["unranked"]["total_kills"]} / {json_data["stats"]["unranked"]["total_deaths"]} / {json_data["stats"]["unranked"]["total_assists"]}\nTime Played: {self.convert_to_preferred_format(json_data["stats"]["unranked"]["total_time_played"])}')
+            
+            # Ranked
+            if json_data["stats"]["ranked_matches_wins"] != 0 and json_data["stats"]["ranked_matches"] != 0:
+                rank_win_rate = round((json_data["stats"]["ranked_matches_wins"] / json_data["stats"]["ranked_matches"]) * 100,2)
+            else:
+                rank_win_rate = 0
             embed.add_field(name='Ranked Matches Overall', 
-                            value=f'Win / Total: {json_data["stats"]["ranked_matches_wins"]} / {json_data["stats"]["ranked_matches"]}\nK/D/A: {json_data["stats"]["ranked"]["total_kills"]} / {json_data["stats"]["ranked"]["total_deaths"]} / {json_data["stats"]["ranked"]["total_assists"]}\nTime Played: {self.convert_to_preferred_format(json_data["stats"]["ranked"]["total_time_played"])}')
+                            value=f'Win / Total: {json_data["stats"]["ranked_matches_wins"]} / {json_data["stats"]["ranked_matches"]}\nWin Rate: {rank_win_rate} %\nK/D/A: {json_data["stats"]["ranked"]["total_kills"]} / {json_data["stats"]["ranked"]["total_deaths"]} / {json_data["stats"]["ranked"]["total_assists"]}\nTime Played: {self.convert_to_preferred_format(json_data["stats"]["ranked"]["total_time_played"])}')
 
             await ctx.send(embed=embed)
         except Exception as e:
